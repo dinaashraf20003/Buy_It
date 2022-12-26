@@ -8,13 +8,8 @@ namespace DesktopStoreProject
     {
 
         [BsonId]
-
         [BsonRepresentation(BsonType.ObjectId)]
-        private string Id;
-
-
-        [BsonElement("orderId")]
-        public string OrderId { get; set; }
+        public string Id { get; set; }
 
         [BsonElement("clientId")] 
         public string ClientId { get; set; }
@@ -31,9 +26,8 @@ namespace DesktopStoreProject
         public List<OrderItem> OrderItems { get; set; } =  new List<OrderItem>();
 
 
-        public Order(string orderId, string clientId, DateTime date, List<OrderItem> orderItems)
+        public Order(string clientId, DateTime date, List<OrderItem> orderItems)
         {
-            OrderId = orderId;
             ClientId = clientId;
             Date = date;
             OrderItems = orderItems;
@@ -46,7 +40,7 @@ namespace DesktopStoreProject
                 throw new Exception("Order is delivered. Status cannot be updated!");
             }
             Status += 1;
-            var filter = Builders<Order>.Filter.Eq(doc => doc.OrderId, OrderId);
+            var filter = Builders<Order>.Filter.Eq(doc => doc.Id, Id);
             var update = Builders<Order>.Update.Set(doc => doc.Status, Status);
             Global.OrdersCollection.FindOneAndUpdate(filter, update);
         }

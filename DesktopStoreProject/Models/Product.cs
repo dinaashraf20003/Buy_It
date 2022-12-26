@@ -5,8 +5,9 @@ namespace DesktopStoreProject
 {
     internal class Product
     {
-        [BsonElement("id")] 
-        public string ProductId { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
         [BsonElement("name")]
         public string Name { get; set; }
@@ -63,13 +64,24 @@ namespace DesktopStoreProject
         public string Brand { get; set; }
 
 
-        public Product(string id, string name, float price, int stock, string description, List<String> images, Category category, string brand)
+        public Product(string name, float price, int stock, string description, List<String> images, Category category, string brand)
         {
-            ProductId = id;
             Name = name;
             Price = price;
             Stock = stock;
             Description = description; 
+            Images = images;
+            Category = category;
+            Brand = brand;
+        }
+
+        public Product(string id, string name, float price, int stock, string description, List<String> images, Category category, string brand)
+        {
+            Id = id;
+            Name = name;
+            Price = price;
+            Stock = stock;
+            Description = description;
             Images = images;
             Category = category;
             Brand = brand;
@@ -83,7 +95,7 @@ namespace DesktopStoreProject
                 throw new Exception("Not enough stock!");
             }
 
-            return new OrderItem(quantity, ProductId, Name, Price, Stock, Description, Images, Brand, Category);
+            return new OrderItem(quantity, Id, Name, Price, Stock, Description, Images, Brand, Category);
 
         }
     }
