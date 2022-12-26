@@ -78,7 +78,13 @@ namespace DesktopStoreProject
 
         public OrderItem CreateOrderItem(int quantity)
         {
+            if (Stock < quantity) 
+            {
+                throw new Exception("Not enough stock!");
+            }
+
             return new OrderItem(quantity, ProductId, Name, Price, Stock, Description, Images, Brand, Category);
+
         }
     }
 }

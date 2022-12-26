@@ -15,7 +15,6 @@ namespace DesktopStoreProject
             TotalCost += item.Price * item.Quantity;
             TotalQuantity += item.Quantity;
             Items.Add(item);
-            // change
         }
         public void RemoveItem(OrderItem item) {
             TotalCost -= item.Price * item.Quantity;

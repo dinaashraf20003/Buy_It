@@ -3,6 +3,7 @@ using MongoDB.Bson;
 
 namespace DesktopStoreProject
 {
+
     internal class User
     {
         [BsonId]
@@ -17,6 +18,13 @@ namespace DesktopStoreProject
 
         [BsonElement("email")]
         public string Email { get; set; }
+
+        [BsonElement("password")]
+        public string Password
+        {
+            get;     
+            private set;
+        }
 
         [BsonElement("phone")]
         public string Phone { get; set; }
@@ -33,7 +41,19 @@ namespace DesktopStoreProject
             Email = email;
             Phone = phone;
             Country = country;
-            //change
+        }
+
+        public void SetPassword(string input)
+        {
+            if (input.Length > 8)
+            {
+                Password = BCrypt.Net.BCrypt.HashPassword(input);
+            }
+
+            else
+            {
+                throw new Exception("Password Too Short!");
+            }
         }
     }
 }
