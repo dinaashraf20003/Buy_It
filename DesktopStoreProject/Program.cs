@@ -5,7 +5,7 @@ namespace DesktopStoreProject
 {
     internal static class Program
     {
-        [STAThread]
+        [STAThread] 
         static void Main()
         { 
 

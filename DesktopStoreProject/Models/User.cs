@@ -33,6 +33,7 @@ namespace DesktopStoreProject
             Email = email;
             Phone = phone;
             Country = country;
+            //change
         }
     }
 }
