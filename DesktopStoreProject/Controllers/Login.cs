@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopStoreProject
+namespace DesktopStoreProject.Controllers
 {
     internal class Login
     {

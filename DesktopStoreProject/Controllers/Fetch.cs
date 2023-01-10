@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopStoreProject.Models
+namespace DesktopStoreProject.Controllers
 {
     internal class Fetch
     {

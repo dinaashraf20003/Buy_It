@@ -1,8 +1,8 @@
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using BCrypt.Net;
-using DesktopStoreProject.Models;
 using System.Runtime.CompilerServices;
+using DesktopStoreProject.Controllers;
 
 namespace DesktopStoreProject
 {
@@ -36,11 +36,18 @@ namespace DesktopStoreProject
             {
                 Console.WriteLine("{0}\t{1}", x.Id, x.Stock);
             }*/
+            /*Login.CheckDetails();
+            NewUser.CreateNewAccount();
+            Fetch.FetchItems("63187b870132457dbd41e6f7");
+            Purchase.Receipt();
+            Purchase.PurchaseOrder("mohmhaas@gmail.com");
+            OrderList.List("mohmhaas@gmail.com");
+            CreateProductAdmin.Create()
             foreach(var x in AdminOrderList.List())
             {
                 foreach(var y in x.OrderItems)
                     Console.WriteLine(y.Name); 
-            }
+            }*/
             //NewUser.CreateNewAccount("Amr", "smouha 73", "amrelshabacy72@gmail.com", "01158998803", "Egypt", "123456789");
             /*
              List<String> imgs = new List<String>();
