@@ -9,5 +9,6 @@ namespace DesktopStoreProject
         public static MongoCollectionBase<User> UsersCollection;
         public static MongoCollectionBase<Product> ProductsCollection;
         public static MongoCollectionBase<Order> OrdersCollection;
+        public static Cart cart = new Cart();
     }
 }
