@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesktopStoreProject
+namespace DesktopStoreProject.Models
 {
     public enum OrderStatus
     {

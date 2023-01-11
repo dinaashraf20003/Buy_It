@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 
-namespace DesktopStoreProject
+namespace DesktopStoreProject.Models
 {
 
     internal class User
@@ -22,7 +22,7 @@ namespace DesktopStoreProject
         [BsonElement("password")]
         public string Password
         {
-            get;     
+            get;
             private set;
         }
 
@@ -32,9 +32,9 @@ namespace DesktopStoreProject
         [BsonElement("country")]
         public string Country { get; set; }
 
-        public List<String> OrdersMade { get; set; } = new List<String>(); // list of the ids of the orders this user made
+        public List<string> OrdersMade { get; set; } = new List<string>(); // list of the ids of the orders this user made
 
-        public User( string name, string address, string email, string phone, string country)
+        public User(string name, string address, string email, string phone, string country)
         {
             Name = name;
             Address = address;

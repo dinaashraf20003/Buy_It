@@ -1,7 +1,7 @@
 ﻿using MongoDB.Driver;
-using System; 
+using System;
 
-namespace DesktopStoreProject
+namespace DesktopStoreProject.Models
 {
     internal class Cart
     {
@@ -22,7 +22,8 @@ namespace DesktopStoreProject
             TotalQuantity += Order.Quantity;
             Items.Add(Order);
         }
-        public void RemoveItem(string id, int quantity) {
+        public void RemoveItem(string id, int quantity)
+        {
             var filter = Builders<Product>.Filter.Eq(doc => doc.Id, id);
             var item = Global.ProductsCollection.Find(filter).FirstOrDefault();
             Product AddedItem = new Product(item.Id, item.Name, item.Price, item.Stock, item.Description,
@@ -30,7 +31,7 @@ namespace DesktopStoreProject
             OrderItem Order = AddedItem.CreateOrderItem(quantity);
             TotalCost += Order.Price * Order.Quantity;
             TotalQuantity += Order.Quantity;
-            Items.Remove(Order); 
+            Items.Remove(Order);
         }
 
         public void ResetCart()

@@ -2,7 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 
-namespace DesktopStoreProject
+namespace DesktopStoreProject.Models
 {
     internal class Order
     {
@@ -11,7 +11,7 @@ namespace DesktopStoreProject
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        [BsonElement("clientId")] 
+        [BsonElement("clientId")]
         public string ClientId { get; set; }
 
         [BsonElement("date")]
@@ -23,7 +23,7 @@ namespace DesktopStoreProject
         public OrderStatus Status { get; set; } = OrderStatus.PROCESSING;
 
         [BsonElement("items")]
-        public List<OrderItem> OrderItems { get; set; } =  new List<OrderItem>();
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
 
         public Order(string clientId, DateTime date, List<OrderItem> orderItems)
@@ -35,7 +35,7 @@ namespace DesktopStoreProject
 
         public void UpdateStatus()
         {
-            if(Status == OrderStatus.DELIVERED)
+            if (Status == OrderStatus.DELIVERED)
             {
                 throw new Exception("Order is delivered. Status cannot be updated!");
             }

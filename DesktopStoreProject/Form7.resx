@@ -57,4 +57,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="helloAndWelcomeToSHOPNAMEThePlaceToFindTheBestPRODUCTSCATEGORYNAMEForEveryTasteAndOccasionWeThoroughlyCheckTheQualityOfOurGoodsWorkingOnlyWithReliableSuppliersSoThatYouOnlyReceiveTheBestQualityProductToolStripMenuItem.Name" xml:space="preserve">
+    <value>helloAndWelcomeToSHOPNAMEThePlaceToFindTheBestPRODUCTSCATEGORYNAMEForEveryTasteAndOccasionWeThoroughlyCheckTheQualityOfOurGoodsWorkingOnlyWithReliableSuppliersSoThatYouOnlyReceiveTheBestQualityProductToolStripMenuItem</value>
+  </data>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Hello and welcome to BUY IT, the place to find the best products for every taste and occasion. We thoroughly check the quality of our goods, working only with reliable suppliers so that you only receive the best quality product.
+
+We at BUY IT believe in high quality and exceptional customer service. But most importantly, we believe shopping is a right, not a luxury, so we strive to deliver the best products at the most affordable prices, and ship them to you regardless of where you are located.
+</value>
+  </data>
 </root>

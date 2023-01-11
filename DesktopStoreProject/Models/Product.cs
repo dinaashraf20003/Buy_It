@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace DesktopStoreProject
+namespace DesktopStoreProject.Models
 {
     internal class Product
     {
@@ -42,7 +42,7 @@ namespace DesktopStoreProject
 
             set
             {
-                if(value >= 0)
+                if (value >= 0)
                 {
                     stock = value;
                 }
@@ -50,13 +50,13 @@ namespace DesktopStoreProject
         }
 
         [BsonElement("description")]
-        public string Description {  get; set;  }
+        public string Description { get; set; }
 
         [BsonElement("images")]
-        public List<String> Images { get; set; } = new List<String>();
+        public List<string> Images { get; set; } = new List<string>();
 
         [BsonElement("category")]
-        [BsonRepresentation(BsonType.String)] 
+        [BsonRepresentation(BsonType.String)]
         public Category Category { get; set; }
 
 
@@ -64,18 +64,18 @@ namespace DesktopStoreProject
         public string Brand { get; set; }
 
 
-        public Product(string name, float price, int stock, string description, List<String> images, Category category, string brand)
+        public Product(string name, float price, int stock, string description, List<string> images, Category category, string brand)
         {
             Name = name;
             Price = price;
             Stock = stock;
-            Description = description; 
+            Description = description;
             Images = images;
             Category = category;
             Brand = brand;
         }
 
-        public Product(string id, string name, float price, int stock, string description, List<String> images, Category category, string brand)
+        public Product(string id, string name, float price, int stock, string description, List<string> images, Category category, string brand)
         {
             Id = id;
             Name = name;
@@ -90,7 +90,7 @@ namespace DesktopStoreProject
 
         public OrderItem CreateOrderItem(int quantity)
         {
-            if (Stock < quantity) 
+            if (Stock < quantity)
             {
                 throw new Exception("Not enough stock!");
             }

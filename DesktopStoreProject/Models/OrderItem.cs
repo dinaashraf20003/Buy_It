@@ -1,14 +1,15 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace DesktopStoreProject
+namespace DesktopStoreProject.Models
 {
     internal class OrderItem : Product
     {
 
         private int quantity;
         [BsonElement("quantity")]
-        public int Quantity {
+        public int Quantity
+        {
             get
             {
                 return quantity;
@@ -20,7 +21,7 @@ namespace DesktopStoreProject
             }
         }
 
-        public OrderItem(int quantity, string id, string name, float price, int stock, string description, List<String> images, string brand, Category category) :  base(id, name, price, stock, description, images, category, brand)
+        public OrderItem(int quantity, string id, string name, float price, int stock, string description, List<string> images, string brand, Category category) : base(id, name, price, stock, description, images, category, brand)
         {
             Quantity = quantity;
         }

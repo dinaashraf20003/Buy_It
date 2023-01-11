@@ -1,8 +1,9 @@
-using MongoDB.Bson.Serialization;
+ï»¿using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using BCrypt.Net;
 using System.Runtime.CompilerServices;
 using DesktopStoreProject.Controllers;
+using DesktopStoreProject.Models;
 
 namespace DesktopStoreProject
 {
@@ -22,7 +23,7 @@ namespace DesktopStoreProject
             var filter = Builders<Product>.Filter.Eq(doc => doc.Category, Category.CLOTHES);
             var userDoc = Global.ProductsCollection.Find(_ => true).ToList();
             //Console.WriteLine(userDoc.Name);
-            //foreach (var user in userDoc) { Console.WriteLine(user.Name); }
+            foreach (var user in userDoc) { Console.WriteLine(user.Name); }
             //Console.WriteLine(BCrypt.Net.BCrypt.Verify("alx1991cai", userDoc.Password));
             //Console.WriteLine(Login.CheckDetails("mohmhaas@gmail.com", "alx1991cairo#A"));
             //Console.WriteLine(Fetch.FetchItems("63a59e2ad532dc20e32ef31e").Name);
@@ -53,7 +54,7 @@ namespace DesktopStoreProject
              List<String> imgs = new List<String>();
              imgs.Add("https://images.canadagoose.com/image/upload/w_800,c_scale,f_auto,q_auto:best/v1670616267/product-image/7783M_25_a.jpg");
              imgs.Add("https://images.canadagoose.com/image/upload/w_1920,c_scale,f_auto,q_auto:best/v1670616267/product-image/7783M_25_fsph.jpg");
-             Product prod1 = new Product("Toronto Boot", 750, 12, "Introducing the Toronto Boot—a versatile boot taking inspiration from its namesake, the innovative design focuses on performance and comfort.", imgs, Category.CLOTHES, "Canada Goose");
+             Product prod1 = new Product("Toronto Boot", 750, 12, "Introducing the Toronto Bootï¿½a versatile boot taking inspiration from its namesake, the innovative design focuses on performance and comfort.", imgs, Category.CLOTHES, "Canada Goose");
 
              List<OrderItem> list = new List<OrderItem>();
 

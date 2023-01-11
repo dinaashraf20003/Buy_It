@@ -1,5 +1,4 @@
-﻿
-namespace DesktopStoreProject
+﻿namespace DesktopStoreProject.Models
 {
     public enum Category
     {
