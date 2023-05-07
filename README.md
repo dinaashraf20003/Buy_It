@@ -7,7 +7,7 @@ Amr El-Shabacy, Dina Ashraf, Nouran El-Yammany, Mohamed Hagras.
 
 
 Project details:
-- Users can view products in the home page and the can view each product’s 
+- Users can view products in the home page and they can view each product’s 
 page for more details.
 - Users can create accounts.
 - Users can track their orders using “My orders” page 
